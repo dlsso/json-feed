@@ -28,14 +28,16 @@ var jsonFeed = (function() {
 				// Loop through articles and display info for each
 				for (var i = 0; i < articles.length; i++) {
 					$('#articleContainer').append(
-					'<a href="' + articles[i].url + '">' + articles[i].url_title + '</a><br>'
-					+ 'Body: ' + articles[i].body + '<br>'
-					+ 'Category: ' + articles[i].category + '<br>'
-					+ 'Path: ' + articles[i].path + '<br>'
-					+ 'Type: ' + articles[i].type + '<br>'
-					+ 'UID: ' + articles[i].uid + '<br>'
-					+ 'URL: ' + articles[i].url + '<br>'
-					+ 'URL Title: ' + articles[i].url_title + '<br><br>')
+					'<div class="row"><div class="article col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">'
+					+ '<h4><a href="' + articles[i].url + '">' + articles[i].url_title + '</a></h4>'
+					+ '<p>Body: ' + articles[i].body + '</p>'
+					+ '<p>Category: ' + articles[i].category + '</p>'
+					+ '<p>Path: ' + articles[i].path + '</p>'
+					+ '<p>Type: ' + articles[i].type + '</p>'
+					+ '<p>UID: ' + articles[i].uid + '</p>'
+					+ '<p>URL: ' + articles[i].url + '</p>'
+					+ '<p>URL Title: ' + articles[i].url_title + '</p></div></div>')
+
 				}
 			}
 		});
