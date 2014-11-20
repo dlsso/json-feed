@@ -11,13 +11,13 @@ var jsonFeed = (function() {
 		$.getJSON(newsFeed, function (articles, response) {
 
 			// Validate response
-			if(response !== "success") $('#articleContainer').append(response + '<br>')
+			if(response !== "success") $('#articleContainer').append('<p>' + response + '</p>')
 			else {
 				// Sort articles by URL title
 				articles.sort(function(a, b){
 
 					// Grab title and normalize
-					var titleA=a.url_title.toLowerCase(), titleB=b.url_title.toLowerCase()
+					var titleA=a.url_title.toLowerCase(), titleB=b.url_title.toLowerCase();
 
 					// Sort ascending
 					if (titleA < titleB) return -1 
@@ -37,16 +37,16 @@ var jsonFeed = (function() {
 					+ '<p>UID: ' + articles[i].uid + '</p>'
 					+ '<p>URL: ' + articles[i].url + '</p>'
 					+ '<p>URL Title: ' + articles[i].url_title + '</p></div></div>')
-
 				}
 			}
 		});
-	};
+	}
 
 	// Allows init to be called from the outside
 	return {
 		init: init
 	}
+
 }());
 
 
